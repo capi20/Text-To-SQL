@@ -24,9 +24,24 @@ body {
 }
 
 .dashboard-input {
-	width: 50vw;
+	width: 100%;
 	height: 50px;
 	border-radius: 10px;
+	background-color: white;
+}
+
+.full-height {
+	height: calc(100vh - 64px);
+}
+
+.hide-scrollbar {
+	overflow-y: scroll; /* Keeps the scrolling functionality */
+	scrollbar-width: none; /* Firefox */
+	-ms-overflow-style: none; /* IE and Edge */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+	display: none; /* Chrome, Safari, and Edge */
 }
 
 button {
@@ -166,4 +181,41 @@ a.btn:hover {
 input[type="date"] {
 	width: 100%;
 	max-width: 100%;
+}
+
+.wave-loader {
+	display: flex;
+	align-items: center;
+	gap: 0.3rem;
+	font-size: 2rem;
+	font-weight: bold;
+	color: #555;
+}
+
+.wave-loader span {
+	display: inline-block;
+	animation: wave 1.5s infinite;
+}
+
+.wave-loader span:nth-child(1) {
+	animation-delay: 0s;
+}
+
+.wave-loader span:nth-child(2) {
+	animation-delay: 0.2s;
+}
+
+.wave-loader span:nth-child(3) {
+	animation-delay: 0.4s;
+}
+
+@keyframes wave {
+	0%,
+	60%,
+	100% {
+		transform: translateY(0);
+	}
+	30% {
+		transform: translateY(-10px);
+	}
 }

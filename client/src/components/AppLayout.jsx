@@ -9,7 +9,7 @@ const Main = styled("main", { shouldForwardProp: (prop) => prop !== "open" })(
 	({ theme }) => ({
 		minHeight: "100vh",
 		flexGrow: 1,
-		padding: theme.spacing(8, 0),
+		padding: theme.spacing(8, 0, 0, 0),
 		transition: theme.transitions.create("margin", {
 			easing: theme.transitions.easing.sharp,
 			duration: theme.transitions.duration.leavingScreen

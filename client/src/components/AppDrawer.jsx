@@ -33,17 +33,25 @@ const AppDrawer = ({ open }) => {
 				{Object.keys(CLIENT_ROUTES).map((route, index) => {
 					return (
 						<ListItem
-							key={route}
 							disablePadding
+							key={route}
 							sx={{
-								backgroundColor:
+								borderRight:
 									activeIndex === index
-										? "primary.light"
-										: "inherit", // Active background
+										? `5px solid ${theme.palette.primary.main}`
+										: "none",
 								color:
-									activeIndex === index ? "white" : "inherit" // Active text color
+									activeIndex === index
+										? "primary.main"
+										: "inherit" // Active text color
 							}}>
 							<ListItemButton
+								disableRipple
+								sx={{
+									"&:hover": "none",
+									py: 2,
+									px: 4
+								}}
 								onClick={() => {
 									setActiveIndex(index);
 									navigate(CLIENT_ROUTES[route]["path"]);
